@@ -13,6 +13,7 @@ Q or ESC: Quit program
 
 [Demo Video](https://drive.google.com/file/d/10anhL4t5h0M7cvmN7L8i9I5BQXgZLNJK/view)
 **Warning: Video Compression doesn't allow you to see all of the pixel level details.**
+*There was a game state reset at the 5 second mark in the demo video*
 
 Demo was running on a 1920x1080 screen therefore there were 2,073,600 cells being processed per generation.
 
@@ -20,4 +21,4 @@ CPU: Ryzen 9 5900HX
 
 GPU (Accelerator): NVIDIA GeForce RTX 3080 Laptop GPU
 
-Results: Program was able to achieve ~4 to ~25 Generations Per Second (or Frames per Seconds) depending on how many cells were alive. More Alive Cells = More Draw Calls = Slower Performance.
+Results: Program was able to achieve ~4 to ~25 Generations Per Second (or Frames per Second) depending on how many cells were alive. More Alive Cells = More Draw Calls = Slower Performance.
