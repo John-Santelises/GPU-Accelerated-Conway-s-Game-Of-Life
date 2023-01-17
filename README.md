@@ -7,6 +7,7 @@ Simple graphical application that renders Conways Game of Life with a high volum
 
 ## Controls:
 R: Start Over with a new game state
+
 Q or ESC: Quit program
 
 
