@@ -20,13 +20,12 @@ int processDPIAware = SetProcessDPIAware();
 HDC screen = GetDC(NULL);
 int WINDOW_DIMEN[] = { GetDeviceCaps(screen, HORZRES) , GetDeviceCaps(screen, VERTRES) };
 
-constexpr float CELL_SIZE = 1;
 int WINDOW_ID;
 
 int RESTART_FLAG = 0;
 int QUIT_FLAG = 0;
 
-double MAXIMUM_PLAY_AREA[]{ 0 , WINDOW_DIMEN[0] / (CELL_SIZE) , 0, WINDOW_DIMEN[1] / (CELL_SIZE) };
+double MAXIMUM_PLAY_AREA[]{ 0 , WINDOW_DIMEN[0] , 0, WINDOW_DIMEN[1] };
 
 #define START_CAMARA() 	glMatrixMode(GL_PROJECTION); glLoadIdentity()
 #define START_MODEL() 	glMatrixMode(GL_MODELVIEW); glLoadIdentity()
@@ -129,12 +128,9 @@ public:
 			for (int y = 0; y < this->height; y++) {
 				if (this->get_cell(x, y)) {
 					START_MODEL();
-					glTranslatef(x * CELL_SIZE, y * CELL_SIZE, 0.0f);
-					glBegin(GL_POLYGON);
+					glTranslatef(x, y, 0.0f);
+					glBegin(GL_POINTS);
 					glVertex2f(0.0, 0.0);
-					glVertex2f(CELL_SIZE, 0.0);
-					glVertex2f(CELL_SIZE, CELL_SIZE);
-					glVertex2f(0.0, CELL_SIZE);
 					glEnd();
 				}
 			}
@@ -191,6 +187,8 @@ void reshape(int w, int h) {
 }
 
 int main(int argc, char** argv) {
+	srand(time(NULL));
+
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500, 500);
@@ -200,11 +198,8 @@ int main(int argc, char** argv) {
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
+
 	glClearColor(0.0, 0.0, 0.0, 0.0);
-
-	srand(time(NULL));
-
-	
 
 	glutMainLoop();
 
