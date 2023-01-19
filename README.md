@@ -2,7 +2,7 @@
 Simple graphical application that renders Conways Game of Life with a high volume of cells using the GPU. The motivation was to learn how to use GPGPU libraries, as well as gain more exposure to OpenGL.
 
 ## About
-[C++ AMP](https://learn.microsoft.com/en-us/cpp/parallel/amp/cpp-amp-overview?view=msvc-170) is used, allowing for massive levels of parrellism on the GPU. It runs ontop of DirectX which means this program may be restricted to Windows only. The program will render a cell per pixel on your screen using simple OpenGL draw calls. The program will randomly start by generating a game state for you and then immediately begin processing new generations.
+[C++ AMP](https://learn.microsoft.com/en-us/cpp/parallel/amp/cpp-amp-overview?view=msvc-170) is used, allowing for massive levels of parallelism on the GPU. It runs ontop of DirectX which means this program may be restricted to Windows only. The program will render a cell per pixel on your screen using simple OpenGL draw calls. The program will randomly start by generating a game state for you and then immediately begin processing new generations.
 
 
 ## Controls:
